@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import Button from "../components/Button";
 
 const App = () => {
   const [data, setData] = useState([]);
@@ -19,8 +20,6 @@ const App = () => {
 
   return (
     <div style={{ margin: "auto" }}>
-      <p>hey</p>
-      <p>{console.log(data)}</p>
       <table>
         <thead>
           <tr>
@@ -41,6 +40,7 @@ const App = () => {
           ))}
         </tbody>
       </table>
+      <Button variant={"primary"} type={"clickable"} link={"/create"} title={"Create New"}></Button>
     </div>
   );
 };

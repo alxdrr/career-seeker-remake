@@ -6,12 +6,12 @@ const getAll = () => {
 };
 
 const createNewUser = (body) => {
-  const sqlQuery = `INSERT INTO mahasiswa (nama, alamat, umur) VALUES ('${body.name}', '${body.address}', '${body.age}')`;
+  const sqlQuery = `INSERT INTO mahasiswa (nama, alamat, umur) VALUES ('${body.nama}', '${body.alamat}', '${body.umur}')`;
   return db.execute(sqlQuery);
 };
 
 const updateUser = (body, id) => {
-  const sqlQuery = `UPDATE mahasiswa SET nama="${body.name}", alamat="${body.address}", umur=${body.age} WHERE ID=${id}`;
+  const sqlQuery = `UPDATE mahasiswa SET nama="${body.nama}", alamat="${body.alamat}", umur=${body.umur} WHERE ID=${id}`;
   return db.execute(sqlQuery);
 };
 
