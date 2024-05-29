@@ -35,7 +35,7 @@ const updateUser = async (req, res) => {
   const { id } = req.params;
   const { body } = req;
   try {
-    await UserModel.updateUser(req.body, id);
+    await UserModel.updateUser(body, id);
     res.json({
       message: "update succesfull",
       data: {

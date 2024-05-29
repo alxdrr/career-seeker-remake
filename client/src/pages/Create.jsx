@@ -23,7 +23,7 @@ const Create = () => {
         return response.json();
       })
       .then((data) => {
-        // console.log(data);
+        console.log(data);
         // Clear form fields after successful submission
         setNama("");
         setAlamat("");

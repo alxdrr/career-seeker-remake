@@ -18,6 +18,26 @@ const App = () => {
     }
   };
 
+  const handleDeleteUser = (id) => {
+    fetch(`http://localhost:8081/user/${id}`, {
+      method: "DELETE",
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to delete user");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data); // Proses respons jika perlu
+        // Menerapkan pembaruan UI jika perlu
+      })
+      .catch((error) => {
+        console.error(error);
+        // Menangani kesalahan jika perlu
+      });
+  };
+
   return (
     <div style={{ margin: "auto" }}>
       <table>
@@ -27,6 +47,7 @@ const App = () => {
             <th>Name</th>
             <th>Address</th>
             <th>Age</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -36,6 +57,7 @@ const App = () => {
               <td>{d.nama}</td>
               <td>{d.alamat}</td>
               <td>{d.umur}</td>
+              <button onClick={() => handleDeleteUser(d.ID)}>Delete</button>
             </tr>
           ))}
         </tbody>
